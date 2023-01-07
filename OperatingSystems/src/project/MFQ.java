@@ -37,7 +37,7 @@ public class MFQ {
 				item1.zamanAsimi=item1.zamanAsimi-1;
 				if(item1.zamanAsimi==0) {
 					item1.setDurum("zaman aþýmý");
-					System.out.println(item1);
+					item1.print();
 					readyQueuePrio1.remove(item1);
 				}
 			}
@@ -51,7 +51,7 @@ public class MFQ {
 				item2.zamanAsimi=item2.zamanAsimi-1;
 				if(item2.zamanAsimi==0) {
 					item2.setDurum("zaman aþýmý");
-					System.out.println(item2);
+					item2.print();
 					readyQueuePrio2.remove(item2);
 				}
 			}
@@ -65,7 +65,7 @@ public class MFQ {
 				item3.zamanAsimi=item3.zamanAsimi-1;
 				if(item3.zamanAsimi==0) {
 					item3.setDurum("zaman aþýmý");
-					System.out.println(item3);
+					item3.print();
 					readyQueuePrio3.remove(item3);
 				}
 			}
@@ -76,7 +76,7 @@ public class MFQ {
 	public void goPrio1(Proses item) 
 	{
 		item.setDurum("çalýþýyor");
-		System.out.println(item);
+		item.print();
 		item.setPatlamaZamani(item.getPatlamaZamani()-1);
 		item.zamanAsimi=21;
 		Dispatcher.isStart=false;
@@ -92,14 +92,13 @@ public class MFQ {
 			readyQueuePrio2.add(temp);
 			Dispatcher.isStart=true;
 		}
-
-		System.out.println(item);
+		item.print();
 	}
 	//Önceliði 2 olan kuyruðun çalýþmasý
 	public void goPrio2(Proses item) 
 	{
 		item.setDurum("çalýþýyor");
-		System.out.println(item);
+		item.print();
 		item.setPatlamaZamani(item.getPatlamaZamani()-1);
 		item.zamanAsimi=21;
 		Dispatcher.isStart=false;
@@ -115,13 +114,13 @@ public class MFQ {
 			readyQueuePrio3.add(temp);
 			Dispatcher.isStart=true;
 		}
-		System.out.println(item);
+		item.print();
 	}
 	
 	public void goPrio3(Proses item) 
 	{
 		item.setDurum("çalýþýyor");
-		System.out.println(item);
+		item.print();
 		item.setPatlamaZamani(item.getPatlamaZamani()-1);
 		item.zamanAsimi=21;
 		Dispatcher.isStart=false;
@@ -136,7 +135,7 @@ public class MFQ {
 			readyQueuePrio3.add(temp);
 			Dispatcher.isStart=true;
 		}
-		System.out.println(item);
+		item.print();
 	}
 	
 	public Queue<Proses> getReadyQueuePrio1() {

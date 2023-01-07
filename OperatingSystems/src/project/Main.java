@@ -10,7 +10,7 @@ public class Main {
 	public static void main(String[] args) throws IOException {
 		Queue<Proses> realTimeQueue=new LinkedBlockingQueue<>();
 		Queue<Proses> userJobQueue=new LinkedBlockingQueue<>();
-		ArrayList<String> renkler = new ArrayList();
+		ArrayList<String> renkler = new ArrayList<>();
 		Color.add(renkler);
 		Random rnd=new Random();
 		int row=0;

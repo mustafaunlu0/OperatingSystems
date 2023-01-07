@@ -4,8 +4,7 @@ import java.lang.*;
 
 public class Proses{
 	//Her Proses nesnesinin kendi Process'ini oluþturuyoruz.
-	Process process;
-	ProcessBuilder builder=new ProcessBuilder("cmd.exe","/c","echo");
+	ProcessBuilder builder;
 	int id;
 	int varisZamani;
 	int oncelik;
@@ -17,7 +16,6 @@ public class Proses{
 	public Proses() {}
 	
 	public Proses(int id,int varisZamani, int oncelik, int patlamaZamani,String renk) throws IOException {
-		process=builder.start();
 		this.id=id;
 		this.varisZamani = varisZamani;
 		this.oncelik = oncelik;
@@ -28,7 +26,6 @@ public class Proses{
 	public int getId() {
 		return id;
 	}
-
 	public void setId(int id) {
 		this.id = id;
 	}
@@ -59,21 +56,29 @@ public class Proses{
 	public String getRenk() {
 		return renk;
 	}
-
 	public void setRenk(String renk) {
 		this.renk = renk;
 	}
-	
 	public int getZamanAsimi() {
 		return zamanAsimi;
 	}
-
 	public void setZamanAsimi(int zamanAsimi) {
 		this.zamanAsimi = zamanAsimi;
+	}
+	public ProcessBuilder getBuilder() {
+		return builder;
+	}
+	public void setBuilder(ProcessBuilder builder) {
+		this.builder = builder;
 	}
 
 	@Override
 	public String toString() {
-		return renk+Time.time+ ".sn process " + durum + "	(id:" + id + ", öncelik:" + oncelik + ", kalan süre:" + patlamaZamani + ")";
+		return Time.time+ ".sn process " + durum + "	(id:" + id + ", öncelik:" + oncelik + ", kalan süre:" + patlamaZamani + ")";
+	}
+	
+	public void print() {
+		builder=new ProcessBuilder(toString());
+		System.out.println(renk+builder.command());
 	}
 }

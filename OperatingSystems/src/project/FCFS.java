@@ -27,12 +27,12 @@ public class FCFS {
 		item.setPatlamaZamani(item.getPatlamaZamani()-1);
 		item.zamanAsimi=21;
 		Dispatcher.isStart=false;
-		if(item.getPatlamaZamani()==0) { //Bittiðnde yapýlacaklar
+		if(item.getPatlamaZamani()==0) { //Bittiðinde yapýlacaklar
 			item.setDurum("bitti");
 			readyQueuePrio0.remove(item);
 			Dispatcher.isStart=true;
 		}
-		System.out.println(item);
+		item.print();
 	}
 	
 	public Queue<Proses> getReadyQueuePrio0() {

@@ -32,7 +32,7 @@ public class Dispatcher{
 			if(isStart&&(!(fcfs.readyQueuePrio0.isEmpty())||!(mfq.getReadyQueuePrio1().isEmpty())||!(mfq.getReadyQueuePrio2().isEmpty())||!(mfq.getReadyQueuePrio3().isEmpty()))) {
 				Proses temp=find();
 				temp.setDurum("baþladý");
-				System.out.println(temp);
+				temp.print();
 			}
 			Time.timeUp();
 			if(!fcfs.getReadyQueuePrio0().isEmpty()) {
